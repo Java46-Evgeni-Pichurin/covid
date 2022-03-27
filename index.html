@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="alert" id="alert"></div>
+    <div class="row justify-content-center">
+        <button onclick="showContinentsData()" class="btn btn-outline-primary col-sm-2" id="continentsData">Continents
+            Data</button>
+        <button onclick="showConfirmedHistoryData()" class="btn btn-outline-primary col-sm-2" id="confirmedCases">Confirmed Cases History
+            Data</button>
+        <button onclick="showDeathHistoryData()" class="btn btn-outline-primary col-sm-2" id="deathCases">Death Cases History Data </button>
+        <button onclick="showVaccineData()" class="btn btn-outline-primary col-sm-2" id="vaccineData">Vaccine Data</button>
+    </div>
+    <button id="spinner" class="btn btn-primary" type="button" disabled hidden
+        style="position: absolute; height: 100px; width: 100px; top: 50%; left: 50%; margin-left: -50px; margin-top: -50px;">
+        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+        Loading...
+    </button>
+    <form id="select-form" class=" row justify-content-center mt-3 p-5" hidden>
+        <div class="col col-sm-5 col-lg-3 p-5">
+            <div class="row">
+                <label class="form-label text-primary" for="hours">Choose country</label>
+                <div class="input-group mb-3">
+                    <select id="select-country" class="form-select text-primary text-center" name="selectCountries" required>
+                        <option value hidden disabled selected>--Country--</option>
+
+                    </select>
+                </div> 
+                <label class="form-label text-primary" for="hours">Choose times interval (months)</label>
+                <div class="input-group mb-3">
+                    <select id="select-time" class="form-select text-primary text-center" name="timesInterval" required>
+                        <option value hidden disabled selected>--Times interval--</option>
+
+                    </select>
+                </div> 
+                <button class="btn btn-outline-primary mt-3" type="submit" id="submit-form-select-country">Get data</button>
+            </div>
+        </div>
+    </form>
+    <table class="table table-dark table-striped mt-4 mb-0 p-0 caption-top" id="continentsDataTable"></table>
+    <table class="table table-dark table-striped mt-4 mb-0 p-0 caption-top" id="confirmedHistoryTable"></table>
+    <table class="table table-dark table-striped mt-4 mb-0 p-0 caption-top" id="deathHistoryTable"></table>
+    <table class="table table-dark table-striped mt-4 mb-0 p-0 caption-top" id="vaccineDataTable"></table>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="dist/bundle.js"></script>
+</body>
+
+</html>
